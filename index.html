@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аня и Максим · Свадьба 23.05.2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- современный, живой шрифт + элегантный спенсер для акцентов -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fefbf5;
+            background-image: radial-gradient(circle at 10% 30%, rgba(255, 230, 200, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 90% 70%, rgba(200, 220, 240, 0.15) 0%, transparent 35%);
+            font-family: 'Inter', sans-serif;
+            color: #302e2b;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* карточки и блоки */
+        .card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 48px 48px 48px 48px;
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+            padding: 48px 40px;
+            border: 1px solid rgba(255, 255, 240, 0.6);
+        }
+
+        /* заголовки */
+        .title-main {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(52px, 15vw, 120px);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -1px;
+            color: #584b42;
+            margin-bottom: 8px;
+        }
+
+        .title-main span {
+            display: block;
+            font-size: clamp(28px, 6vw, 52px);
+            font-style: italic;
+            color: #8f7a68;
+            margin-top: 8px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: #584b42;
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: #7b6e64;
+            margin-bottom: 40px;
+        }
+
+        /* сетка */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 700px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* временные метки */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .timeline-time {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #aa8b74;
+            line-height: 1.2;
+            min-width: 110px;
+        }
+
+        .timeline-desc {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #3f3a35;
+            margin-bottom: 8px;
+        }
+
+        .timeline-place {
+            color: #6f6157;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .timeline-address {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff1e6;
+            padding: 8px 18px;
+            border-radius: 60px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #584b42;
+            text-decoration: none;
+            border: 1px solid #e2cfbe;
+            transition: background 0.2s;
+        }
+
+        .map-link:hover {
+            background: #f5e1d2;
+        }
+
+        /* dress code палитра */
+        .palette {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 25px 0 15px;
+        }
+
+        .palette-color {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 8px 12px -6px rgba(0, 0, 0, 0.2);
+            border: 2px solid white;
+        }
+
+        /* детали / иконки */
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f5efe8;
+            border-radius: 100px;
+            padding: 18px 28px;
+            margin: 30px 0;
+            font-size: 18px;
+            border: 1px solid #e9d9cc;
+        }
+
+        .detail-emoji {
+            font-size: 36px;
+        }
+
+        /* форма (имитация, но стилизована под гугл) */
+        .form-card {
+            background: #fffcf8;
+            border-radius: 40px;
+            padding: 20px 20px;
+            border: 1px solid #f0e2d6;
+            
+            
+        }
+       
+
+        .form-row {
+            margin-bottom: 28px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 18px;
+            color: #4a413b;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 17px;
+            border: 1px solid #ddcfc2;
+            border-radius: 60px;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #aa8b74;
+            box-shadow: 0 0 0 4px rgba(170, 139, 116, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            background: #f9f3ed;
+            padding: 16px 24px;
+            border-radius: 60px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 40px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 140px;
+        }
+
+        .btn-submit {
+            background: #aa8b74;
+            border: none;
+            color: white;
+            padding: 20px 48px;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 8px 14px -8px #aa8b74;
+            border: 1px solid #aa8b74;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #8f725d;
+        }
+
+        /* подвал */
+        .footer-note {
+            text-align: center;
+            margin: 80px 0 40px;
+            font-size: 22px;
+            font-style: italic;
+            color: #7b6e64;
+        }
+
+        /* декоративный элемент */
+        .leaf {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23e2cfbe" opacity="0.3"><path d="M61.7,29.5c-5.5-5.5-15-6.8-22.2-2.1c-2.8-3.1-6.8-5-11.2-5c-7.5,0-13.8,5.5-15.3,12.8c-5.7,2.5-9.8,8.2-9.8,14.8c0,8,6,14.7,13.8,15.7c1.2,6.2,6.6,11,13.2,11c7.4,0,13.5-5.7,14.5-13.1c5.1-1.5,9.1-5.8,10.1-11.2C67.8,44.7,66.2,34.1,61.7,29.5z"/></svg>') no-repeat;
+            background-size: contain;
+            width: 120px;
+            height: 100px;
+            position: absolute;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 60px 60px 30px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 25px 35px -20px #584b42;
+        }
+
+        .telegram-link {
+            background: #e8f0fe;
+            border-radius: 60px;
+            padding: 16px 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #2d4b6e;
+            border: 1px solid #bdd3f0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative; overflow-x: hidden;">
+        <div style="position: absolute; top: 20px; left: -30px;" class="leaf"></div>
+        <div style="position: absolute; bottom: 100px; right: -20px;" class="leaf"></div>
+
+        <div class="container" style="padding-top: 40px; padding-bottom: 60px;">
+            <!-- главное фото (сток, потом замените) -->
+            <img class="hero-photo"
+                src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="жених и невеста">
+
+            <!-- заголовок -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div class="title-main">
+                    ПРИГЛАШЕНИЕ<br>НА СВАДЬБУ
+                    <span>Аня и Максим</span>
+                </div>
+            </div>
+
+            <!-- карточка с обращением -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 class="section-title" style="font-size: 48px;">ДОРОГИЕ ДРУЗЬЯ!</h2>
+                <p style="font-size: 22px; max-width: 750px; color: #5e534b; margin: 20px 0 0;">
+                    Приглашаем вас стать частью незабываемого дня нашей жизни — нашей свадьбы!<br>
+                    Мы хотим провести этот день вместе с близкими людьми, чтобы праздник стал ещё более особенным. Будем
+                    рады видеть вас!
+                </p>
+            </div>
+
+            <!-- где и когда (календарь + адреса) -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 class="section-title">📅 ГДЕ И КОГДА</h2>
+
+                <div class="timeline">
+                    <!-- церемония -->
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:30</div>
+                        <div class="timeline-desc">
+                            <div class="timeline-title">Церемония бракосочетания</div>
+                            <div class="timeline-place">ЗАГС Центрального района, Санкт-Петербург</div>
+                            <div class="timeline-address">
+                                <span>Суворовский проспект, 41</span>
+                                <a href="https://yandex.ru/maps/-/CPuh50P0" class="map-link">🗺️ КАРТА</a>
+                            </div>
+                            <p style="color: #a9876f; margin-top: 12px; font-style: italic;">Приходите за 15 минут до
+                                начала!</p>
+                        </div>
+                    </div>
+
+                    <!-- банкет -->
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:30</div>
+                        <div class="timeline-desc">
+                            <div class="timeline-title">🍽️ Банкет</div>
+                            <div class="timeline-place">Эко-лофт Polygon</div>
+                            <div class="timeline-address">
+                                <span>ул. Комсомола, 2</span>
+                                <a href="https://yandex.ru/maps/-/CPuhBAJT" class="map-link">🗺️ КАРТА</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- окончание -->
+                    <div class="timeline-item">
+                        <div class="timeline-time">19:30</div>
+                        <div class="timeline-desc">
+                            <div class="timeline-title">✨ Окончание банкета</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dress code + детали в одной карточке -->
+            <div class="grid-2" style="margin-bottom: 40px;">
+                <div class="card" style="padding: 40px;">
+                    <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">🎨 DRESS CODE</h3>
+                    <p style="margin-bottom: 20px;">Подберите наряды в нашей цветовой палитре:</p>
+                    <div class="palette">
+                        <div class="palette-color" style="background-color: #dbcbbd;"></div>
+                        <div class="palette-color" style="background-color: #b7a48e;"></div>
+                        <div class="palette-color" style="background-color: #8f7a68;"></div>
+                        <div class="palette-color" style="background-color: #e9cfb3;"></div>
+                        <div class="palette-color" style="background-color: #a6a185;"></div>
+                    </div>
+                    <p style="margin-top: 20px;">Любые оттенки беж, песочного, оливкового и пудрового — будет прекрасно!
+                    </p>
+                </div>
+
+                <div class="card" style="padding: 40px;">
+                    <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">🎁 ПОЖЕЛАНИЯ</h3>
+                    <div class="detail-row">
+                        <span class="detail-emoji">📸</span>
+                        <span>Вместо цветов — картриджи для <strong>Instax Mini 11</strong></span>
+                    </div>
+                    <p style="color: #4d423b;">Они помогут сохранить тёплые моментальные снимки прямо на празднике.
+                        Заранее спасибо!</p>
+                </div>
+            </div>
+
+            <!-- телеграм чат -->
+            <div style="display: flex; justify-content: center; margin: 30px 0 20px;">
+                <a href="https://t.me/+BdO4xrCzOpY0ZGQy" class="telegram-link" target="_blank">
+                    <span>💬</span> Организационные вопросы — наш Telegram-чат
+                </a>
+            </div>
+
+           <!-- АНКЕТА ГОСТЯ (отправка в Google Forms) -->
+<div class="form-card" id="anketa">
+    <h2 class="section-title" style="margin-bottom: 8px;">📋 АНКЕТА ГОСТЯ</h2>
+    <p style="margin-bottom: 40px; font-size: 19px; color: #8f7a68;"><strong>Просьба заполнить до
+            01.04.2026</strong></p>
+
+    <!-- Скрытый iframe для приёма ответа без перезагрузки -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- Адаптивный iframe с Google Forms -->
+    <div style="position: relative; width: 100%; overflow: hidden; padding-top: 0; border-radius: 24px;">
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLScWgrgonFmwUojAbFMejg_X_v8dV_tjls4HJwu7LsnVpBUEZA/viewform?embedded=true"
+            style="width: 100%; height: 1767px; border: none; border-radius: 24px;"
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Загрузка…
+        </iframe>
+    </div>
+</div>
+
+<!-- Добавьте медиа-запрос для мобильных устройств -->
+<style>
+    @media screen and (max-width: 768px) {
+        .form-card {
+            padding: 24px 16px !important;
+        }
+        
+        iframe[src*="docs.google.com/forms"] {
+            height: 1900px !important; /* чуть выше на мобильных для удобства прокрутки */
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        iframe[src*="docs.google.com/forms"] {
+            height: 2000px !important;
+        }
+    }
+</style>
+
+            <script>
+                const form = document.getElementById('weddingForm');
+                const successDiv = document.getElementById('successMessage');
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault(); // не даём странице перезагрузиться
+
+                    const formData = new FormData(form);
+
+                    fetch('https://docs.google.com/forms/d/e/1FAIpQLScWgrgonFmwUojAbFMejg_X_v8dV_tjls4HJwu7LsnVpBUEZA/formResponse', {
+                        method: 'POST',
+                        mode: 'no-cors', // обходим CORS
+                        body: formData
+                    })
+                        .then(() => {
+                            form.reset(); // очищаем форму
+                            successDiv.textContent = 'Спасибо! Ваш ответ отправлен.';
+                            successDiv.style.color = '#28a745';
+
+                            // Через 5 секунд убираем сообщение
+                            setTimeout(() => {
+                                successDiv.textContent = '';
+                            }, 5000);
+                        })
+                        .catch((error) => {
+                            console.error('Ошибка:', error);
+                            successDiv.textContent = 'Произошла ошибка. Попробуйте ещё раз.';
+                            successDiv.style.color = 'red';
+                        });
+                });
+            </script>
+
+            <!-- финальные тёплые слова -->
+            <div class="footer-note">
+                Ждём вас, чтобы разделить эту радость ❤️
+            </div>
+
+            <!-- маленький копирайт (необязательно) -->
+            <div style="text-align: center; margin-top: 30px; color: #bcab9b; font-size: 14px;">
+                Аня и Максим · 23 мая 2026 · Санкт-Петербург
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
