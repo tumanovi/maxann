@@ -43,12 +43,23 @@
             box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
             padding: 48px 40px;
             border: 1px solid rgba(255, 255, 240, 0.6);
+            
+        }
+        .card1 {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 48px 48px 48px 48px;
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
+            padding: 48px 40px;
+            border: 1px solid rgba(255, 255, 240, 0.6);
+            text-align: center;
         }
 
         /* заголовки */
         .title-main {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 400;
             line-height: 1;
             letter-spacing: -1px;
@@ -59,7 +70,7 @@
         .title-main span {
             display: block;
             font-size: clamp(28px, 6vw, 52px);
-            font-style: italic;
+           
             color: #8f7a68;
             margin-top: 8px;
         }
@@ -320,6 +331,13 @@
             border: 1px solid #bdd3f0;
             margin: 20px 0;
         }
+        .date {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 28px;
+
+        }
     </style>
 </head>
 
@@ -343,9 +361,9 @@
             </div>
 
             <!-- карточка с обращением -->
-            <div class="card" style="margin-bottom: 40px;">
+            <div class="card1" style="margin-bottom: 40px;">
                 <h2 class="section-title" style="font-size: 48px;">ДОРОГИЕ ДРУЗЬЯ!</h2>
-                <p style="font-size: 22px; max-width: 750px; color: #5e534b; margin: 20px 0 0;">
+                <p style="font-size: 22px; max-width: 750px; color: #5e534b; margin: 0 auto;">
                     Приглашаем вас стать частью незабываемого дня нашей жизни — нашей свадьбы!<br>
                     Мы хотим провести этот день вместе с близкими людьми, чтобы праздник стал ещё более особенным. Будем
                     рады видеть вас!
@@ -354,7 +372,8 @@
 
             <!-- где и когда (календарь + адреса) -->
             <div class="card" style="margin-bottom: 40px;">
-                <h2 class="section-title">📅 ГДЕ И КОГДА</h2>
+                <h2 class="section-title">ГДЕ И КОГДА</h2>
+                <span class="date">23 мая 2026</span><br><br>
 
                 <div class="timeline">
                     <!-- церемония -->
@@ -377,7 +396,7 @@
                         <div class="timeline-time">14:30</div>
                         <div class="timeline-desc">
                             <div class="timeline-title">🍽️ Банкет</div>
-                            <div class="timeline-place">Эко-лофт Polygon</div>
+                            <div class="timeline-place">Эко-лофт пространства Polygon</div>
                             <div class="timeline-address">
                                 <span>ул. Комсомола, 2</span>
                                 <a href="https://yandex.ru/maps/-/CPuhBAJT" class="map-link">🗺️ КАРТА</a>
@@ -389,7 +408,7 @@
                     <div class="timeline-item">
                         <div class="timeline-time">19:30</div>
                         <div class="timeline-desc">
-                            <div class="timeline-title">✨ Окончание банкета</div>
+                            <div class="timeline-title">✨ Окончание банкета</div><br><br>
                         </div>
                     </div>
                 </div>
@@ -397,27 +416,26 @@
 
             <!-- dress code + детали в одной карточке -->
             <div class="grid-2" style="margin-bottom: 40px;">
-                <div class="card" style="padding: 40px;">
-                    <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">🎨 DRESS CODE</h3>
-                    <p style="margin-bottom: 20px;">Подберите наряды в нашей цветовой палитре:</p>
+                <div class="card1   " style="padding: 40px;">
+                    <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">DRESS CODE</h3>
+                    <p style="margin-bottom: 20px;">Мы будем рады, если у вас получится подобрать наряды в цветовой палитре нашей свадьбы:</p>
                     <div class="palette">
-                        <div class="palette-color" style="background-color: #dbcbbd;"></div>
-                        <div class="palette-color" style="background-color: #b7a48e;"></div>
-                        <div class="palette-color" style="background-color: #8f7a68;"></div>
-                        <div class="palette-color" style="background-color: #e9cfb3;"></div>
-                        <div class="palette-color" style="background-color: #a6a185;"></div>
+                        <div class="palette-color" style="background-color: #5C5041;"></div>
+                        <div class="palette-color" style="background-color: #EDDAC5;"></div>
+                        <div class="palette-color" style="background-color: #A288A1;"></div>
+                        <div class="palette-color" style="background-color: #E4E7F3;"></div>
+                        <div class="palette-color" style="background-color: #B6B19D;"></div>
                     </div>
-                    <p style="margin-top: 20px; text-align: center;">Любые оттенки беж, песочного, оливкового и пудрового — будет прекрасно!
-                    </p>
+                    
                 </div>
 
-                <div class="card" style="padding: 40px;">
-                    <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">🎁 ПОЖЕЛАНИЯ</h3>
+                <div class="card1" style="padding: 40px;">
+                    <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">ПОЖЕЛАНИЯ</h3>
                     <div class="detail-row">
                         <span class="detail-emoji">📸</span>
                         <span>Вместо цветов — картриджи для <strong>Instax Mini 11</strong></span>
                     </div>
-                    <p style="color: #4d423b; text-align: center;">Они помогут сохранить тёплые моментальные снимки прямо на празднике.
+                    <p style="color: #4d423b; text-align: center;">Они помогут сохранить тёплые воспоминания.
                         Заранее спасибо!</p>
                 </div>
             </div>
