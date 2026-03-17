@@ -62,7 +62,7 @@
             font-size: 28px;
             font-weight: 400;
             line-height: 1;
-            letter-spacing: -1px;
+            letter-spacing: 3px;
             color: #584b42;
             margin-bottom: 8px;
         }
@@ -72,7 +72,7 @@
             font-size: clamp(28px, 6vw, 52px);
            
             color: #8f7a68;
-            margin-top: 8px;
+            margin-top: 30px;
         }
 
         .section-title {
@@ -143,9 +143,10 @@
         }
 
         .timeline-address {
-            display: flex;
+            display: block;
             align-items: center;
             gap: 10px;
+            width: 100%;
             flex-wrap: wrap;
         }
 
@@ -162,6 +163,8 @@
             text-decoration: none;
             border: 1px solid #e2cfbe;
             transition: background 0.2s;
+            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
         .map-link:hover {
@@ -188,7 +191,7 @@
         /* детали / иконки */
         .detail-row {
             display: flex;
-            align-items: center;
+            align-items: start;
             gap: 20px;
             background: #f5efe8;
             border-radius: 100px;
@@ -196,6 +199,9 @@
             margin: 30px 0;
             font-size: 18px;
             border: 1px solid #e9d9cc;
+        }
+        .detail-row span {
+            text-align: start;
         }
 
         .detail-emoji {
@@ -403,7 +409,7 @@
                     <div class="timeline-item">
                         <div class="timeline-time">11:30</div>
                         <div class="timeline-desc">
-                            <div class="timeline-title">Церемония бракосочетания</div>
+                            <div class="timeline-title">⛪<br><br> Церемония бракосочетания</div>
                             <div class="timeline-place">ЗАГС Центрального района, Санкт-Петербург</div>
                             <div class="timeline-address">
                                 <span>Суворовский проспект, 41</span>
@@ -418,7 +424,7 @@
                     <div class="timeline-item">
                         <div class="timeline-time">14:30</div>
                         <div class="timeline-desc">
-                            <div class="timeline-title">🍽️ Банкет</div>
+                            <div class="timeline-title">🍽️<br><br> Банкет</div>
                             <div class="timeline-place">Эко-лофт пространства Polygon</div>
                             <div class="timeline-address">
                                 <span>ул. Комсомола, 2</span>
@@ -431,7 +437,7 @@
                     <div class="timeline-item">
                         <div class="timeline-time">19:30</div>
                         <div class="timeline-desc">
-                            <div class="timeline-title">✨ Окончание банкета</div><br><br>
+                            <div class="timeline-title">✨<br><br> Окончание банкета</div><br><br>
                         </div>
                     </div>
                 </div>
@@ -443,10 +449,18 @@
                     <h3 class="section-title" style="font-size: 32px; margin-bottom: 20px;">DRESS CODE</h3>
                     <p style="margin-bottom: 20px;">Мы будем рады, если у вас получится подобрать наряды в цветовой палитре нашей свадьбы:</p>
                     <div class="palette">
+                        <div class="one_color">
                         <div class="palette-color" style="background-color: #5C5041;"></div>
+                        <div>Шоколадный</div>
+                        </div>
+                        <div class="one_color"></div>
                         <div class="palette-color" style="background-color: #EDDAC5;"></div>
+                        
+                        <div class="one_color"></div>
                         <div class="palette-color" style="background-color: #A288A1;"></div>
+                        <div class="one_color"></div>
                         <div class="palette-color" style="background-color: #E4E7F3;"></div>
+                        <div class="one_color"></div>
                         <div class="palette-color" style="background-color: #B6B19D;"></div>
                     </div>
                     
@@ -459,7 +473,7 @@
                         <span>Вместо цветов — картриджи для <strong>Instax Mini 11</strong></span>
                     </div>
                     <p style="color: #4d423b; text-align: center;">Они помогут сохранить тёплые воспоминания.
-                        Заранее спасибо!</p>
+                       </p>
                 </div>
             </div>
  <!-- главное фото (сток, потом замените) -->
